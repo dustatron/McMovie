@@ -7,12 +7,17 @@
       <div class="col-sm-6 col-md-4"> 
       
         <div class="thumbnail thumb-box"> 
+        <% if movie.title? %>
  
-          <h2 style="text-align:center;"><%= link_to movie.title, movie %></h2>
+          <h2 style="text-align:center;"> <%= link_to movie.title, movie %> </h2>
+        <% else %>
+          <h2 style="text-align:center;"> <%= link_to 'Edit', movie %> </h2>
+        
+        <% end %>
           
-            <%= image_tag( movie.image,class: "poster", size: "250x300") %>
+            <%= image_tag( movie.image, class: "poster", size: "250x300") %>
             
-            <p>A little something about the movie</p>
+            <p><%= movie.body %></p>
             
             <div class="caption" style="text-align:center;">
               <%= link_to like_movie_path(movie), class: "like", method: :put do %>

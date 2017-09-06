@@ -1,9 +1,9 @@
 class CreateMovies < ActiveRecord::Migration
   def change
     create_table :movies do |t|
-      t.string :title
+      t.string :title null: false
       t.string :image
-      t.string :body
+
 
       t.timestamps null: false
     end

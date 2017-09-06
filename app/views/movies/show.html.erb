@@ -8,9 +8,17 @@
 
 <p>
   <strong>Image:</strong>
-  <%= @movie.image %>
+  <hr/>
+  
+  <%= image_tag(@movie.image, class: "poster", size: "250x300") %>
+  <%#= @movie.image %>
+  
+</p>
+<p>
+  <%= @movie.body %> <br>
+  <%= link_to "trailer", @movie.trailer, :target => "blank"  %>
 </p>
 
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %> | 
-<%= link_to 'Delete', movie_path, :method => :delete %>
+<%= link_to 'Delete', movie_path, :confirm => "are you sure?", :method => :delete %>

@@ -17,8 +17,22 @@
           <a href="#" class="navbar-brand">Brand</a> 
         </div> 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-3"> 
-          <button type="button" class="btn btn-default navbar-btn">Sign in</button> 
-        </div> 
+          <% if user_signed_in? %>  
+            
+            <%= link_to destroy_user_session_path, method: :delete do %>
+            <button type="button" class="btn btn-default navbar-btn">Log Out</button>
+            <% end %>
+            
+            <div class="navbar-right navbar-brand">Hello, <%= current_user.email %></div>
+            
+          <% else %>
+          
+            <%= link_to new_user_session_path do %>
+            <button type="button" class="btn btn-default navbar-btn">Sign in</button> 
+            <% end %>
+          <% end %>
+        </div>
+        
       </div>
     </nav>
     

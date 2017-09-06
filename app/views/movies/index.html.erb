@@ -8,8 +8,8 @@
       <div class="col-sm-6 col-md-4"> 
       
         <div class="thumbnail thumb-box"> 
-          
-          <h2 style="text-align:center;"><%= movie.title %></h2>
+          <%= link_to movie.title, movie %>
+          <h2 style="text-align:center;"><%= link_to movie.title, movie %></h2>
           
             <%= image_tag( movie.image, size: "250x300") %>
             

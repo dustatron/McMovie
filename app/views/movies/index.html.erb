@@ -1,4 +1,3 @@
-<h1>Listing movies</h1>
 
 <%= link_to 'New Movie', new_movie_path %>
 
@@ -8,10 +7,12 @@
       <div class="col-sm-6 col-md-4"> 
       
         <div class="thumbnail thumb-box"> 
-          <%= link_to movie.title, movie %>
+ 
           <h2 style="text-align:center;"><%= link_to movie.title, movie %></h2>
           
-            <%= image_tag( movie.image, size: "250x300") %>
+            <%= image_tag( movie.image,class: "poster", size: "250x300") %>
+            
+            <p>A little something about the movie</p>
             
             <div class="caption" style="text-align:center;">
               <%= link_to like_movie_path(movie), class: "like", method: :put do %>

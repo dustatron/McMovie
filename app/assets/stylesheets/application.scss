@@ -5,9 +5,17 @@
 
 
 .thumb-box {
+    text-align: center;
     height: 500px;
+    padding: 10px;
 }
 
 .like:hover {
     text-decoration: none;
+}
+
+.poster {
+    border: 3px solid black;
+    max-height: 400px;
+    width: auto;
 }

@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  resources :movies
+  resources :movies do 
+   member do
+    put "like" => "movies#upvote"
+    put "unlike" => "movies#downvote"
+   end
+   
+  
+  end
   devise_for :users
   
   root to: "home#index"

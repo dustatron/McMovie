@@ -6,6 +6,20 @@
 <hr/>
 
     <% @movies.each do |movie| %>
+      <div class="col-sm-6 col-md-4"> 
+      
+        <div class="thumbnail thumb-box"> 
+          
+          <h2 style="text-align:center;"><%= movie.title %></h2>
+          
+            <%= image_tag( movie.image, size: "250x300") %>
+            
+            <div class="caption" style="text-align:center;">
+              
+            </div>
+          
+      </div> 
+    </div>
 
     <% end %>
 

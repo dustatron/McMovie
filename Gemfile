@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-gem 'sqlite3', group: [:development, :test]
 
 #use postgresql as the database for produciton
 group :production do
@@ -39,6 +38,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+# Use Puma as the app server
+gem 'puma', '~> 3.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -53,7 +55,7 @@ group :development do
   gem 'web-console', '~> 2.0'
   
   # Use sqlite3 as the database for Active Record
-  # gem 'sqlite3'
+   gem 'sqlite3'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'

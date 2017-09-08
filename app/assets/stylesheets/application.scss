@@ -3,6 +3,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
 body {
     background: rgb(12, 12, 12);
 }
@@ -10,6 +11,7 @@ body {
 
 .thumb-box {
     text-align: center;
+    color: white;
     height: 500px;
     padding: 10px;
     background: rgb(43, 43, 43);

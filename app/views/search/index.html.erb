@@ -1,0 +1,7 @@
+<h1>Search for a movie</h1>
+
+<ul>
+  <% @searches['results'].each do |movie| %>
+  <li><%= movie['title']%></li>
+  <%end%>
+</ul>

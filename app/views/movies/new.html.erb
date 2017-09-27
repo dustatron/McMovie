@@ -13,24 +13,12 @@
 
   <!-- check for nil -->
   <% if (@searches['results'] != nil) then %>
-    <!-- read out API -->
-    <h3> Total results <%= @searches['total_results'] %> </h3>
-    <% @searches['results'].each do |movie| %>
-      <div class="well">
-        <h3><%= movie['title']%></h3>
+    <%= render 'list' %>
 
-        <div class="">
-        <%= image_tag("http://image.tmdb.org/t/p/w185/#{movie['poster_path']}", :alt => "poster") %>
-      </div>
-        <p><%= movie['overview']%></p>
-        <p>Released : <%= movie['release_date']%></p>
-        <button type="button" name="button">Add Movie</button>
-      </div>
-      <!-- end of API read out -->
-      <% end %>
   <% else %>
     <p>No Search Results</p>
     <!-- end of if statement -->
   <% end %>
+
 
 </div>

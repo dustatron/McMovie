@@ -1,0 +1,22 @@
+ <%= form_for(@movie) do |f| %>
+  <h3> Total results <%= @searches['total_results'] %> </h3>
+  
+  <% @searches['results'].each do |movie| %>
+    <div class="well">
+           
+        <h3><%=movie['title']%></h3>
+        <p>Movie ID: <%= movie['id']%></p>
+  
+        <div class="">
+          <%= image_tag("http://image.tmdb.org/t/p/w185/#{movie['poster_path']}", :alt => "poster") %>
+        </div>
+        
+         <p><%= movie['overview']%></p>
+         <p>Released : <%= movie['release_date']%></p>
+         
+        <div class="actions">
+
+        </div>
+    </div>
+    <% end %>
+<% end %>

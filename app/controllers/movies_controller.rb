@@ -26,11 +26,12 @@ class MoviesController < ApplicationController
   def edit
   end
 
-  # POST /movies
+  # POST /moviesbun
   # POST /movies.json
+
   def create
     @movie = Movie.new(movie_params)
-
+ 
     respond_to do |format|
       if @movie.save
         format.html { redirect_to @movie, notice: 'Movie was successfully created.' }

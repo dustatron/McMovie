@@ -1,5 +1,36 @@
-<h1>New Movie</h1>
 
-<%= render 'form' %>
+<h1>Add A New Movie</h1>
 
-<%= link_to 'Back', movies_path %>
+
+<%= form_tag(new_movie_path, method: "get") do %>
+  <%= text_field_tag(:q)%>
+  <%= submit_tag("Search")%>
+
+<% end %>
+
+<!-- List Out Movies -->
+<div class="row">
+
+  <!-- check for nil -->
+  <% if (@searches['results'] != nil) then %>
+    <!-- read out API -->
+    <h3> Total results <%= @searches['total_results'] %> </h3>
+    <% @searches['results'].each do |movie| %>
+      <div class="well">
+        <h3><%= movie['title']%></h3>
+
+        <div class="">
+        <%= image_tag("http://image.tmdb.org/t/p/w185/#{movie['poster_path']}", :alt => "poster") %>
+      </div>
+        <p><%= movie['overview']%></p>
+        <p>Released : <%= movie['release_date']%></p>
+        <button type="button" name="button">Add Movie</button>
+      </div>
+      <!-- end of API read out -->
+      <% end %>
+  <% else %>
+    <p>No Search Results</p>
+    <!-- end of if statement -->
+  <% end %>
+
+</div>

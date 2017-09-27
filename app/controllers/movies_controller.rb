@@ -17,7 +17,10 @@ class MoviesController < ApplicationController
   # GET /movies/new
   def new
     @movie = Movie.new
+    @params = params[:q]
+    @searches = Search.for(@params)
   end
+
 
   # GET /movies/1/edit
   def edit
@@ -62,16 +65,16 @@ class MoviesController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   def upvote
     @movie.upvote_from current_user
     redirect_to movies_path
   end
-  
+
   def downvote
     @movie.downvote_from current_user
     redirect_to movies_path
-    
+
   end
 
   private

@@ -1,7 +1,16 @@
 <h1>Search for a movie</h1>
 
-<ul>
+  <h3> Total results <%= @searches['total_results'] %> </h3>
   <% @searches['results'].each do |movie| %>
-  <li><%= movie['title']%></li>
+  <div class="well">
+
+    <h3><%= movie['title']%></h3>
+    <div class="">
+      <%= image_tag("http://image.tmdb.org/t/p/w185/#{movie['poster_path']}", :alt => "poster") %>
+    </div>
+    <p><%= movie['overview']%></p>
+    <p>Released : <%= movie['release_date']%></p>
+    <button type="button" name="button">Add Movie</button>
+  </div>
+
   <%end%>
-</ul>

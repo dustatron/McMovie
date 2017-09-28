@@ -3,11 +3,72 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.red-line{
+  border: 1px solid red;
+}
+
 
 body {
+    color: white;
     background: rgb(12, 12, 12);
 }
 
+
+
+.show{
+  .title{
+    text-align: center;
+    background-color: rgb(43, 43, 43);
+    border-radius: 5px 5px 0px 0px;
+    border-bottom: 2px solid black;
+
+    h2{
+      font-size: 3em;
+      font-weight: bolder;
+      text-transform: uppercase;
+    }
+  }
+
+  .movie_details {
+    background-color: #434549;
+
+    img{
+      padding-top: 10px;
+      margin: auto;
+      border: 0px;
+      height: auto;
+      width: 100%
+    }
+
+    button {
+      width: 100%;
+      border-radius: 0px 0px 5px 5px;
+      border: 0px;
+      padding: 10px;
+      background-color: green;
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bolder;
+    }
+
+    .movie_body{
+      margin-top: 3em;
+    }
+  }
+
+
+  .lower_menu {
+    text-align: center;
+    font-weight: bold;
+    background-color: rgb(43, 43, 43);
+    border-radius: 0px 0px 5px 5px;
+    border-top: 2px solid black;
+  }
+
+
+
+}
 
 .thumb-box {
     text-align: center;
@@ -16,11 +77,12 @@ body {
     padding: 10px;
     background: rgb(43, 43, 43);
     border: solid black;
-    
-    a { 
+
+    a {
         color: white;
     }
 }
+
 
 
 .like:hover {

@@ -1,24 +1,32 @@
 <p id="notice"><%= notice %></p>
-<h2>Movie Show</h2>
 
-<p>
-  <strong>Title:</strong>
-  <%= @movie.title %>
-</p>
+<div class="show">
 
-<p>
-  <strong>Image:</strong>
-  <hr/>
-  
-  <%= image_tag(@movie.image, class: "poster", size: "250x300") %>
-  <%#= @movie.image %>
-  
-</p>
-<p>
-  <%= @movie.body %> <br>
-  <%= link_to "trailer", @movie.trailer, :target => "blank"  %>
-</p>
+  <div class="row title">
+    <h2><%= @movie.title %><h2>
+  </div>
 
-<%= link_to 'Edit', edit_movie_path(@movie) %> |
-<%= link_to 'Back', movies_path %> | 
-<%= link_to 'Delete', movie_path, :confirm => "are you sure?", :method => :delete %>
+  <div class="row movie_details">
+
+      <div class="col-md-3 movie_poster">
+        <%= image_tag(@movie.image) %>
+        <p class="trailer">
+
+        <%= link_to "<button>trailer</button>".html_safe, @movie.trailer, :target => "blank" %>
+        </p>
+      </div>
+      <div class="col-md-9 movie_body">
+        <h3>Details</h3>
+        <hr>
+        <%= @movie.body %> <br>
+      </div>
+
+  </div>
+
+  <div class="row lower_menu">
+    <%= link_to 'Edit', edit_movie_path(@movie) %> |
+    <%= link_to 'Back', movies_path %> |
+    <%= link_to 'Delete', movie_path, :confirm => "are you sure?", :method => :delete %>
+  </div>
+
+</div>

@@ -1,28 +1,16 @@
-
 <h1>Add A New Movie</h1>
-
 
 <%= form_tag(new_movie_path, method: "get") do %>
   <%= text_field_tag(:q)%>
   <%= submit_tag("Search")%>
-
 <% end %>
 
 <!-- List Out Movies -->
 <div class="row">
 
-  <% if (@searches['results'] != nil) then %>
-    <!-- read out API -->
-    <h3> Total results <%= @searches['total_results'] %> </h3>
-    <% @searches['results'].each do |movie_result| %>
-      <% movie = Movie.new({
-        title: movie_result['title'],
-        image: "http://image.tmdb.org/t/p/w185/#{movie_result['poster_path']}",
-        body: "
-          <p>#{movie_result['overview']}</p>
-          <p>Released : #{movie_result['release_date']}</p>
-        ",
-      }) %>
+  <% if @results.any? %>
+    <h3> Total results <%= @results.count %> </h3>
+    <% @results.movies.each do |movie| %>
       <%= form_for movie do |form| %>
         <%= form.hidden_field :title %>
         <%= form.hidden_field :image %>

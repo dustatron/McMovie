@@ -16,9 +16,8 @@ class MoviesController < ApplicationController
 
   # GET /movies/new
   def new
-    @movie = Movie.new
-    @params = params[:q]
-    @searches = Search.for(@params)
+    searches = Search.for(params[:q])
+    @results = Results.new(searches)
   end
 
 

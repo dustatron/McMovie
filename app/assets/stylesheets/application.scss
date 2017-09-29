@@ -17,6 +17,17 @@ input {
   color: black;
 }
 
+.dark-color {
+  background-color: rgb(43, 43, 43);
+}
+
+.tag-line{
+  margin: auto 20px;
+  width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 .read-out {
   color: black;

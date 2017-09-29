@@ -1,21 +1,23 @@
 
-
-<h1>Add A New Movie</h1>
-
-<div class="row">
-  <%= form_tag(new_movie_path, method: "get") do %>
-    <div class="col-md-4 col-xm-4">
-      <%= text_field_tag(:q, "Movie Title", class: "form-control") %>
-    </div>
-    <div class="col-md-2 col-xm-4">
-      <%= submit_tag("Search", class: "btn btn-default")%>
-    </div>
-    <% end %>
+<div class="row text-center">
+  <h1>ADD A MOVIE</h1>
 </div>
 
+<div class="row text-center">
+  <%= form_tag(new_movie_path, method: "get") do %>
+  <div class="col-md-6 col-md-offset-3">
+    <div class="input-group">
+      <%= text_field_tag(:q, nil, class: "form-control") %>
+      <span class="input-group-btn">
+          <%= submit_tag("Search", class: "btn btn-secondary")%>
+      </span>
+    </div>
+  </div>
+  <% end %>
+</div>
 
 <!-- List Out Movies -->
-<div class="row">
+<div class="row text-center">
 
   <% if @results.any? %>
     <h3> Total results <%= @results.count %> </h3>
@@ -25,7 +27,7 @@
         <%= form.hidden_field :image %>
         <%= form.hidden_field :body %>
 
-        <div class="well">
+        <div class="well read-out">
           <h3>
             <%= movie.title %>
           </h3>

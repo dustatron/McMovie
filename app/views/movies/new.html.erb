@@ -25,9 +25,6 @@
     <% @results.movies.each do |movie| %>
       <%= form_for movie do |form| %>
         <%= form.hidden_field :id %>
-        <%= form.hidden_field :title %>
-        <%= form.hidden_field :image %>
-        <%= form.hidden_field :body %>
 
         <div class="well read-out dark-color">
         

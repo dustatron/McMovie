@@ -21,10 +21,10 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-3">
         <ul class="nav navbar-nav navbar-right">
         	<li>
-        		<%= link_to "ABOUT", about_path %>
+        	  <%= link_to 'ADD MOVIE', new_movie_path %>
         	</li>
         	<li>
-        		<%= link_to 'ADD MOVIE', new_movie_path %>
+        		<%= link_to "ABOUT", about_path %>
         	</li>
         	<li>
         	  <% if user_signed_in? %>

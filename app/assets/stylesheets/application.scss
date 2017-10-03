@@ -3,6 +3,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+// div {
+//   border: 1px solid red;
+// }
+
+.shorten {
+    white-space: nowrap; 
+    width: 2em; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
 .red-line{
   border: 1px solid red;
 }
@@ -30,7 +41,8 @@ input {
 }
 
 .read-out {
-  color: black;
+  color: white;
+  border: 1px solid black;
 }
 
 .show{
@@ -91,13 +103,17 @@ input {
 .thumb-box {
     text-align: center;
     color: white;
-    height: 500px;
-    padding: 10px;
+    height: 450px;
+    padding: 0px;
     background: rgb(43, 43, 43);
     border: solid black;
 
     a {
         color: white;
+    }
+    
+    .title {
+      background: grey;
     }
 }
 

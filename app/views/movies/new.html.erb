@@ -24,6 +24,7 @@
     <h3> Total results <%= @results.count %> </h3>
     <% @results.movies.each do |movie| %>
       <%= form_for movie do |form| %>
+        <%= form.hidden_field :id %>
         <%= form.hidden_field :title %>
         <%= form.hidden_field :image %>
         <%= form.hidden_field :body %>
@@ -33,7 +34,7 @@
           <div class="row">
             <div class="col-md-4">
               <div>
-                <%= image_tag movie.image, alt: "poster" %>
+                <%= image_tag movie.image, alt: "No Poster Available" %>
               </div> 
             </div>
             <div class="col-md-7 text-left">
@@ -43,6 +44,7 @@
                 </h2>
               </div>
               <div class="row">
+                <%= movie.id %>
                 <%= raw movie.body %>
               </div>
               <div class="row">
@@ -57,7 +59,10 @@
 
     <% end %>
   <% else %>
-    <p>No Search Results</p>
+  <div class="row">
+     <h3>Search By Movie Title</h3>
+  </div>
+
   <% end %>
   </div>
 

@@ -28,7 +28,7 @@ class MoviesController < ApplicationController
   # POST /movies
   # POST /movies.json
   def create
-    details = Details.for(500)
+    details = Details.for(params[:movie]['id'])
     grabThe = Grabs.new(details)
     @movie = grabThe.movie
 

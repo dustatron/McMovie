@@ -1,4 +1,5 @@
-
+<div class="container">
+  
 <div class="row text-center">
   <h1>ADD A MOVIE</h1>
 </div>
@@ -17,41 +18,52 @@
 </div>
 
 <!-- List Out Movies -->
-<<<<<<< HEAD
-<div class="row">
-
-  <!-- check for nil -->
-  <% if (@searches['results'] != nil) then %>
-    <%= render 'list' %>
-
-=======
 <div class="row text-center">
-
+  <div class="col-md-8 col-md-offset-2">
+    
   <% if @results.any? %>
     <h3> Total results <%= @results.count %> </h3>
     <% @results.movies.each do |movie| %>
       <%= form_for movie do |form| %>
-        <%= form.hidden_field :title %>
-        <%= form.hidden_field :image %>
-        <%= form.hidden_field :body %>
+        <%= form.hidden_field :id %>
 
-        <div class="well read-out">
-          <h3>
-            <%= movie.title %>
-          </h3>
-          <div>
-            <%= image_tag movie.image, alt: "poster" %>
+        <div class="well read-out dark-color">
+        
+          <div class="row">
+            <div class="col-md-4">
+              <div>
+                <%= image_tag movie.image, alt: "No Poster Available" %>
+              </div> 
+            </div>
+            <div class="col-md-7 text-left">
+              <div class="row">
+                <h2>
+                  <%= movie.title %>
+                </h2>
+              </div>
+              <div class="row">
+                <%= movie.id %>
+                <%= raw movie.body %>
+              </div>
+              <div class="row">
+                <input type="submit" value="Add Movie" class="btn btn-primary">
+                </input>
+              </div>
+            </div>
           </div>
-          <%= raw movie.body %>
-          <input type="submit" value="Add Movie">
+
         </div>
       <% end %>
 
     <% end %>
->>>>>>> master
   <% else %>
-    <p>No Search Results</p>
+  <div class="row">
+     <h3>Search By Movie Title</h3>
+  </div>
+
   <% end %>
-
-
+  </div>
 </div>
+</div>
+
+

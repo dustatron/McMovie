@@ -1,26 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<div class="show">
+<div class="container show">
 
   <div class="row title">
     <h2><%= @movie.title %><h2>
   </div>
+  <div class="row">
+    <embed class="player" src="https://www.youtube.com/embed/<%= @movie.trailer %>" frameborder="0">
+  </div>
 
   <div class="row movie_details">
-
       <div class="col-md-3 movie_poster">
         <%= image_tag(@movie.image) %>
-        <p class="trailer">
-
-        <%= link_to "<button>trailer</button>".html_safe, @movie.trailer, :target => "blank" %>
-        </p>
       </div>
       <div class="col-md-9 movie_body">
-        <h3>Details</h3>
-        <hr>
-        <%= @movie.body.html_safe %> <br>
+        <%= @movie.body %> <hr>
+        More Details to come. Still working on this.
       </div>
-
   </div>
 
   <div class="row lower_menu">

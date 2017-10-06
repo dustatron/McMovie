@@ -1,0 +1,9 @@
+    
+    // from the New view form
+        <%= form.hidden_field :title %>
+        <%= form.hidden_field :image %>
+        <%= form.hidden_field :body %>
+        
+        
+        
+        &append_to_response=videos

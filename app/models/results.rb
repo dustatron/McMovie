@@ -16,10 +16,8 @@ class Results
       Movie.new({
         title: result['title'],
         image: "http://image.tmdb.org/t/p/w185/#{result['poster_path']}",
-        body: "
-          <p>#{result['overview']}</p>
-          <p>Released : #{result['release_date']}</p>
-        ",
+        body: result['overview'],
+        id: result['id'],
       })
     end
   end

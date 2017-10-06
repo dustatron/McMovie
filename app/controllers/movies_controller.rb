@@ -29,8 +29,11 @@ class MoviesController < ApplicationController
   # POST /movies.json
 
   def create
-    @movie = Movie.new(movie_params)
- 
+
+    details = Details.for(params[:movie]['id'])
+    grabThe = Grabs.new(details)
+    @movie = grabThe.movie
+
     respond_to do |format|
       if @movie.save
         format.html { redirect_to @movie, notice: 'Movie was successfully created.' }

@@ -5,11 +5,19 @@ class Grabs
     end
     
     def movie
+        movieTrailer = 'KXSJNBGUH_o'
+        
+        if @title['videos']['results'].present?
+            
+            movieTrailer = @title['videos']['results'][0]['key']
+        end
+        
+        
         Movie.new({
             title: @title['title'],
             image: "http://image.tmdb.org/t/p/w185/#{@title['poster_path']}",
             body: @title['overview'],
-            trailer: @title['videos']['results'][0]['key'],
+            trailer: movieTrailer,
             budget: @title['budget'],
             imdb: @title['imdb_id'],
             release_date: @title['release_date'],

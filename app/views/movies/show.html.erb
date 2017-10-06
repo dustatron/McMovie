@@ -15,7 +15,19 @@
       </div>
       <div class="col-md-9 movie_body">
         <%= @movie.body %> <hr>
-        More Details to come. Still working on this.
+        Run Time : <%= @movie.runtime %> minutes <br>
+        
+        Budget &nbsp;: <%= number_with_delimiter(@movie.budget, :delimiter => ',') %> <br>
+        Revenue: <%= number_with_delimiter(@movie.revenue, :delimiter => ',' ) %> <br>
+        
+        <% if (@movie.release_date) %>
+          Release Date : <%= @movie.release_date.to_date.strftime("%A, %b %d %Y") %>
+        <% else %>
+          Release Date : Unknown
+        <% end %>
+        <br>
+        
+        <%= link_to 'IMDB Link', "http://www.imdb.com/title/#{@movie.imdb}", target: :_blank %>
       </div>
   </div>
 
@@ -26,3 +38,4 @@
   </div>
 
 </div>
+

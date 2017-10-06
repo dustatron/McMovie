@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170906212016) do
+ActiveRecord::Schema.define(version: 20171006034545) do
 
   create_table "movies", force: :cascade do |t|
     t.string   "title"
@@ -27,6 +27,12 @@ ActiveRecord::Schema.define(version: 20170906212016) do
     t.float    "cached_weighted_average", default: 0.0
     t.text     "body"
     t.string   "trailer"
+    t.integer  "budget"
+    t.string   "imdb"
+    t.string   "release_date"
+    t.integer  "revenue"
+    t.integer  "runtime"
+    t.text     "tagline"
   end
 
   add_index "movies", ["cached_votes_down"], name: "index_movies_on_cached_votes_down"

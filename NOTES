@@ -7,3 +7,5 @@
         
         
         &append_to_response=videos
+        
+        .strftime("%A, %b %d %Y")

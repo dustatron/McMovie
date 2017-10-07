@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/search' => 'search#index'
   
  #user Profiles
- resources :profiles
+ resources :profiles 
 
  #movie read outs
   resources :movies do

@@ -1,7 +1,13 @@
 
 <% if user_signed_in? %>
-    <h1>Profile for <%= current_user.email %></h1>
-    <%= link_to 'LOG OUT', destroy_user_session_path, :method => :delete %>
+    <h1>Profile for <%= @user.name %></h1>
+    id : <%= current_user.id%> <br/>
+    Name : <%= current_user.name %> <br/>
+    email : <%= current_user.email %><br/>
+    tagline : <%= current_user.tagline %><br/>
+    bio: <%= current_user.bio %><br/>
+    
+    <%= link_to "EDIT", edit_profile_path(id: current_user.id)%>
     
 
 <% else %>

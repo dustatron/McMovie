@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
+ 
+ #search is a temp page
   get 'search/index'
   get '/search' => 'search#index'
+  
+ #user Profiles
+ get 'profiles/index'
+ get '/profile' => 'profiles#index'
 
+ #movie read outs
   resources :movies do
    member do
     put "like" => "movies#upvote"
@@ -11,8 +18,10 @@ Rails.application.routes.draw do
   end
   devise_for :users
 
+ #Index options
   root to: "home#index"
   get '/about' => 'home#about'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

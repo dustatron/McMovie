@@ -16,6 +16,7 @@ class Grabs
         Movie.new({
             title: @title['title'],
             image: "http://image.tmdb.org/t/p/w185/#{@title['poster_path']}",
+            backdrop: "http://image.tmdb.org/t/p/w185/#{@title['backdrop_path']}",
             body: @title['overview'],
             trailer: movieTrailer,
             budget: @title['budget'],

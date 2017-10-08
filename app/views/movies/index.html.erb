@@ -1,25 +1,30 @@
+<div class="container">
+  
+
+<div class="row">
 
     <% @movies.each do |movie| %>
+
       <!--the box-->
       <div class="col-sm-4 col-md-4 col-lg-3 reader-board">
       
-        <div class="thumbnail thumb-box">
-          
-          <div class="row title">
-            
-              <% if movie.title? %>
-                <span style="text-align:center;"> <%= link_to movie.title, movie %> </span>
-              <% else %>
-                <span style="text-align:center;"> <%= link_to 'Edit', movie %> </span>
-              <% end %>
-              
-
-          </div>
+        <div class="thumb-box">
           
         <div class="row images">
           <%= link_to movie do %>
-            <%= image_tag( movie.image, class: "poster") %>
+            <%= image_tag( movie.backdrop, class: "poster") %>
           <% end %>
+        </div>
+        <div class="shadow">
+          
+       
+        <div class="row title">
+            <% if movie.title? %>
+              <span style="text-align:center;"> <%= link_to movie.title, movie %> </span>
+            <% else %>
+              <span style="text-align:center;"> <%= link_to 'Edit', movie %> </span>
+            <% end %>
+        </div>
         </div>
         
         <div class="row voting">
@@ -39,9 +44,10 @@
               <% end %>
           </div>          
         </div>
-      
+
       </div>
       <!--end the box-->
     </div>
-
     <% end %>
+  </div>
+</div>

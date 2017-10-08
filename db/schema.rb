@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171007014009) do
+ActiveRecord::Schema.define(version: 20171008070734) do
 
   create_table "movies", force: :cascade do |t|
     t.string   "title"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20171007014009) do
     t.integer  "revenue"
     t.integer  "runtime"
     t.text     "tagline"
+    t.string   "backdrop"
   end
 
   add_index "movies", ["cached_votes_down"], name: "index_movies_on_cached_votes_down"

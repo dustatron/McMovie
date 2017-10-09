@@ -1,47 +1,57 @@
+<div class="container">
+  
+
+<div class="row">
 
     <% @movies.each do |movie| %>
-      <!--the box-->
-      <div class="col-sm-4 col-md-4 col-lg-3 reader-board">
-      
-        <div class="thumbnail thumb-box">
-          
-          <div class="row title">
-            
-              <% if movie.title? %>
-                <span style="text-align:center;"> <%= link_to movie.title, movie %> </span>
-              <% else %>
-                <span style="text-align:center;"> <%= link_to 'Edit', movie %> </span>
-              <% end %>
-              
 
-          </div>
+      <!--the box-->
+      <div class="col-sm-6 col-md-6 col-lg-4 reader-board">
+      
+        <div class="thumb-box">
           
         <div class="row images">
           <%= link_to movie do %>
-            <%= image_tag( movie.image, class: "poster") %>
+            <%= image_tag( movie.backdrop, class: "poster") %>
           <% end %>
         </div>
+
+      <div class="shadow">
+        
+        <div class="row title">
+            <% if movie.title? %>
+              <span style="text-align:center;"> <%= link_to movie.title, movie %> </span>
+            <% else %>
+              <span style="text-align:center;"> <%= link_to 'Edit', movie %> </span>
+            <% end %>
+        </div>
+      </div>
+        
         
         <div class="row voting">
-          <div class="caption" style="text-align:center;">
+        
+          
+          <div class="caption" >
               <%= link_to like_movie_path(movie), class: "like", method: :put do %>
-                <button type="button" class="btn btn-info" aria-label-"Left Align">
+                <button type="button" class="btn btn-success" aria-label-"Left Align">
                   <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
                   <span class="badge"><%= movie.get_upvotes.size %></span>
                 </button>
               <% end %>
 
               <%= link_to unlike_movie_path(movie), class: "like", method: :put do %>
-                <button type="button" class="btn btn-info" aria-label-"Left Align">
+                <button type="button" class="btn btn-danger" aria-label-"Left Align">
                   <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
                   <span class="badge"><%= movie.get_downvotes.size %></span>
                 </button>
               <% end %>
-          </div>          
+            </div>
+
         </div>
-      
+
       </div>
       <!--end the box-->
     </div>
-
     <% end %>
+  </div>
+</div>

@@ -68,6 +68,7 @@ class MoviesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
 
   def upvote
     @movie.upvote_from current_user
@@ -77,7 +78,6 @@ class MoviesController < ApplicationController
   def downvote
     @movie.downvote_from current_user
     redirect_to movies_path
-
   end
 
   private

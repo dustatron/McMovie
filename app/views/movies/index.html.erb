@@ -21,6 +21,7 @@
         <div class="row title">
             <% if movie.title? %>
               <span style="text-align:center;"> <%= link_to movie.title, movie %> </span>
+              <span class="year"><%= movie.release_date.to_date.strftime("%Y") %> </span>
             <% else %>
               <span style="text-align:center;"> <%= link_to 'Edit', movie %> </span>
             <% end %>

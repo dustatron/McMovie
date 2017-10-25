@@ -37,7 +37,7 @@
         	<li>
         	  <% if user_signed_in? %>
         	    <% if (current_user.name != '') %>
-        	      <%= link_to current_user.name.upcase, profiles_path %>
+        	      <%= link_to current_user.name, profiles_path %>
         	   <% else %>
         	     <%= link_to 'PROFILE', profiles_path %> 
         	   <% end %>

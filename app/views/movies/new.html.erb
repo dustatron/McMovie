@@ -1,5 +1,5 @@
 <div class="container">
-  
+
 <div class="row text-center">
   <h1>ADD A MOVIE</h1>
 </div>
@@ -20,7 +20,7 @@
 <!-- List Out Movies -->
 <div class="row text-center">
   <div class="col-md-8 col-md-offset-2">
-    
+
   <% if @results.any? %>
     <h3> Total results <%= @results.count %> </h3>
     <% @results.movies.each do |movie| %>
@@ -28,28 +28,29 @@
         <%= form.hidden_field :id %>
 
         <div class="well read-out dark-color">
-        
+
           <div class="row">
             <div class="col-md-4">
               <div>
                 <%= image_tag movie.image, alt: "No Poster Available" %>
-              </div> 
+              </div>
             </div>
             <div class="col-md-7 text-left">
-              <div class="row">
+              <div class="row edge-padding">
                 <h2>
                   <%= movie.title %>
                 </h2>
               </div>
-              <div class="row">
-                
+              <div class="row edge-padding">
+
                 <%= raw movie.body %>
               </div>
-              <div class="row text-right">
-                <input type="submit" value="Add Movie" class="btn btn-lg btn-primary">
-                </input>
-              </div>
+
             </div>
+          </div>
+          <div class="row text-center top-padding edge-padding">
+            <input type="submit" value="ADD MOVIE" class="btn btn-lg btn-block btn-success active">
+            </input>
           </div>
 
         </div>
@@ -65,5 +66,3 @@
   </div>
 </div>
 </div>
-
-

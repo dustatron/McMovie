@@ -2,7 +2,7 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+// 
 // div {
 //   border: 1px solid red;
 // }
@@ -10,10 +10,10 @@
 
 
 .shorten {
-    white-space: nowrap; 
-    width: 2em; 
+    white-space: nowrap;
+    width: 2em;
     overflow: hidden;
-    text-overflow: ellipsis; 
+    text-overflow: ellipsis;
 }
 
 .red-line{
@@ -30,10 +30,10 @@ body {
 
 .movie-list{
   // padding-bottom: 100px;
-  margin-bottom: 100px; 
-  
+  margin-bottom: 100px;
+
   .index-comment-count{
-   padding: 12px 5px 0px 0px; 
+   padding: 12px 5px 0px 0px;
   }
 }
 
@@ -47,6 +47,24 @@ input {
 
 .dark-color {
   background-color: rgb(43, 43, 43);
+}
+
+.top-padding {
+  padding-top: 25px;
+}
+
+.edge-padding {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.to-the-edge {
+  padding: 0;
+  margin: 0;
+}
+
+.center-me{
+  margin: auto;
 }
 
 .tag-line{
@@ -65,24 +83,24 @@ input {
 
 
 .show{
+
+  padding-left: 0;
+  padding-right: 0;
+
   .title{
-    margin-left: 0px;
-    margin-right: 0px;
+    margin: auto;
+    width: 100%;
     padding-left: 10px;
     background-color: rgb(43, 43, 43);
     border-radius: 5px 5px 0px 0px;
-    // border-bottom: 2px solid black;
-    // white-space: nowrap;
-    // overflow: hidden;
-    // text-overflow: ellipsis;
+
 
     h2{
-      // font-size: 3em;
       font-weight: bolder;
       text-transform: uppercase;
     }
   }
-  
+
   .player{
     display: block;
     margin: auto;
@@ -116,6 +134,8 @@ input {
 
     .movie_body{
       margin-top: 3em;
+      padding-left: 28px;
+      padding-bottom: 10px;
     }
   }
 
@@ -125,7 +145,9 @@ input {
     font-weight: bold;
     background-color: rgb(43, 43, 43);
     border-radius: 0px 0px 5px 5px;
-    border-top: 2px solid black;
+    border-top: 0;
+    margin: auto;
+    width: 100%;
   }
 
 
@@ -146,17 +168,17 @@ input {
     background: #1d1d1d;
     border: solid black;
     border: .5px solid #3a3a3a;
-    
-  
+
+
 
     a {
         color: white;
     }
-    
+
     button {
-      
+
     }
-    
+
     .shadow {
       height: 75px;
       width: 100%;
@@ -179,9 +201,9 @@ input {
       right: 12px;
       height: auto;
       margin: 0;
-      
-     
-      
+
+
+
       h2 {
         padding: 0;
         font-family: "Proxima Nova Semibold";
@@ -195,14 +217,14 @@ input {
         overflow: visible;
       }
     }
-    
+
     .images {
-    
+
       width: 100%;
       margin: 0px;
       padding: 0px;
-    
-      
+
+
       img{
         width: 100%;
         height: auto;
@@ -210,7 +232,7 @@ input {
         margin: 0px;
         padding: 0px;
       }
-      
+
     }
     button {
       border-radius: 0;
@@ -221,25 +243,25 @@ input {
       padding: 0px 2px 2px 0px;
       margin: 0;
     }
-    
+
     .caption{
       // width: 100%;
       margin: 0;
       padding: 0;
-      
+
     }
-    
+
     .year {
       padding-left: 5px;
       text-align: right;
       font-size: 1.2em;
       font-weight: bolder;
       color: white;
-      
+
       opacity: 0.5;
       text-align: right;
-  
-      
+
+
     }
 
 }
@@ -267,18 +289,19 @@ input {
   margin: 10px 5px;
   padding: 10px 0 0 0;
   border-radius: 5px;
-  
+
   .comment-text{
     padding-bottom: 50px;
   }
-  
+
   .bottom-row{
     padding-bottom: 10px;
   }
-  
+
 }
 
 .make-comment {
+  margin: auto;
   height: 500px;
   margin-bottom: 50px;
 }

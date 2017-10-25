@@ -1,5 +1,5 @@
 <div class="container movie-list">
-  
+
 
 <div class="row">
 
@@ -7,9 +7,9 @@
 
       <!--the box-->
       <div class="col-sm-6 col-md-6 col-lg-4 reader-board">
-      
+
         <div class="thumb-box">
-          
+
         <div class="row images">
           <%= link_to movie do %>
             <%= image_tag( movie.backdrop, class: "poster") %>
@@ -17,7 +17,7 @@
         </div>
 
       <div class="shadow">
-        
+
         <div class="row title">
             <% if movie.title? %>
               <span style="text-align:center;"> <%= link_to movie.title, movie %> </span>
@@ -27,12 +27,12 @@
             <% end %>
         </div>
       </div>
-        
-        
+
+
         <div class="row voting">
-        
-          
-          <div class="caption col-md-6 text-left" >
+
+
+          <div class="caption col-md-6 col-xs-6 text-left" >
               <%= link_to like_movie_path(movie), class: "like", method: :put do %>
                 <button type="button" class="btn btn-success" aria-label-"Left Align">
                   <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
@@ -47,13 +47,13 @@
                 </button>
               <% end %>
             </div>
-            
-           <div class="col-md-6 text-right index-comment-count">
+
+           <div class="col-md-6 col-xs-6 text-right index-comment-count">
             COMMENTS <%= movie.comments.count %>
            </div>
 
         </div>
-        
+
 
       </div>
       <!--end the box-->

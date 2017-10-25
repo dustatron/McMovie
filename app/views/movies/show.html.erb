@@ -1,7 +1,7 @@
 <div class="container show">
 
   <div class="row title">
-    <div class="col-md-10 ">
+    <div class="col-md-10 col-xs-12 ">
       <h2><%= @movie.title %></h2>
     </div>
     <div class="col-md-2">
@@ -11,31 +11,31 @@
     </div>
 
   </div>
-  <div class="row">
+  <div class="row to-the-edge">
     <div class="col-md-12">
       <embed class="player" src="https://www.youtube.com/embed/<%= @movie.trailer %>?rel=0&amp;showinfo=0" frameborder="0">
     </div>
   </div>
 
-  <div class="row movie_details">
+  <div class="row movie_details to-the-edge">
       <div class="col-md-3 movie_poster">
         <%= image_tag(@movie.image) %>
-  
+
       </div>
       <div class="col-md-9 movie_body">
         <%= @movie.body %> <hr>
         Run Time : <%= @movie.runtime %> minutes <br>
-        
+
         Budget &nbsp;: <%= number_with_delimiter(@movie.budget, :delimiter => ',') %> <br>
         Revenue: <%= number_with_delimiter(@movie.revenue, :delimiter => ',' ) %> <br>
-        
+
         <% if (@movie.release_date) %>
           Release Date : <%= @movie.release_date.to_date.strftime("%A, %b %d %Y") %>
         <% else %>
           Release Date : Unknown
         <% end %>
         <br>
-        
+
         <%= link_to 'IMDB Link', "https://www.imdb.com/title/#{@movie.imdb}", target: :_blank %>
       </div>
   </div>
@@ -47,11 +47,11 @@
   </div>
 
 </div>
-<div class="container">
-  
-  
-  <div class="col-md-10 col-md-offset-1">
-    
+<div class="container center-me">
+
+
+  <div class="col-md-10 col-md-offset-1 col-xs-12">
+
     <h2 class="text-center"><%= @movie.comments.count %> Comments </h2>
     <%= render @movie.comments %>
   </div>
@@ -59,10 +59,7 @@
 
 </div>
 
-  <div class="container">
+  <div class="container center-me">
      <%= render "comments/form" %>
 
   </div>
-
-
-

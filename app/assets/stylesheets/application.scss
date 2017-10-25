@@ -28,6 +28,15 @@ body {
     min-height: 100%;
 }
 
+.movie-list{
+  // padding-bottom: 100px;
+  margin-bottom: 100px; 
+  
+  .index-comment-count{
+   padding: 12px 5px 0px 0px; 
+  }
+}
+
 .comment-body{
   color: black;
 }
@@ -214,8 +223,9 @@ input {
     }
     
     .caption{
-      width: 100%;
+      // width: 100%;
       margin: 0;
+      padding: 0;
       
     }
     

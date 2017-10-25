@@ -48,3 +48,14 @@
 
 </div>
 
+<div>
+   <h2><%= @movie.comments.count %> Comments </h2>
+   <%= render @movie.comments %>
+   <br/>
+   <%= render "comments/form" %>
+   
+
+</div>
+
+
+

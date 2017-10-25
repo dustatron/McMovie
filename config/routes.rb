@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
  #movie read outs
   resources :movies do
+   resources :comments
    member do
     put "like" => "movies#upvote"
     put "unlike" => "movies#downvote"

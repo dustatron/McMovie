@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
- 
+
  #search is a temp page
   get 'search/index'
   get '/search' => 'search#index'
-  
+
  #user Profiles
- resources :profiles 
+ resources :profiles
 
  #movie read outs
   resources :movies do
@@ -16,7 +16,8 @@ Rails.application.routes.draw do
    end
 
   end
-  devise_for :users
+  # devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
 
  #Index options
   root to: "home#index"

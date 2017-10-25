@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse zero-bottom-margin">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3" aria-expanded="false">
@@ -39,7 +39,7 @@
         	    <% if (current_user.name != '') %>
         	      <%= link_to current_user.name, profiles_path %>
         	   <% else %>
-        	     <%= link_to 'PROFILE', profiles_path %> 
+        	     <%= link_to 'PROFILE', profiles_path %>
         	   <% end %>
         	 <% end %>
         	</li>
@@ -50,11 +50,11 @@
 
       </div>
     </nav>
- 
+
 
      <%= yield %>
 
- 
+
 
   <footer class="footer dark-color">
       <div class="container">

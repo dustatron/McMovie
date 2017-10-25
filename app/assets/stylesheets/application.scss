@@ -2,7 +2,7 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
-// 
+//
 // div {
 //   border: 1px solid red;
 // }
@@ -67,6 +67,10 @@ input {
   margin: auto;
 }
 
+.zero-bottom-margin{
+  margin-bottom: 0;
+}
+
 .tag-line{
   margin: auto 20px;
   width: 90%;
@@ -83,7 +87,7 @@ input {
 
 
 .show{
-
+  margin-top: 25px;
   padding-left: 0;
   padding-right: 0;
 

@@ -1,7 +1,14 @@
-
-USER: <%= comment.user %><br>
-COMMENT: <%= comment.body %><br>
-POSTED :<%= time_ago_in_words(comment.created_at) %>
-<br>
-<%= link_to 'Delete', [comment.movie, comment], :method => :delete, data: { confirm: "are you sure?"} %>
-<hr/>
+<div class="col-md-12 comment-box dark-color block-center">
+    <div class="col-md-12 comment-text">
+        <%= comment.body %><br>
+    </div>
+    <div class="col-md-4 bottom-row">
+        Posted By: <%= comment.user %>
+    </div>
+    <div class="col-md-4 text-right bottom-row">
+       | <%= time_ago_in_words(comment.created_at) %> |
+    </div>
+    <div class="col-md-4 text-center bottom-row">
+    <%= link_to 'Delete', [comment.movie, comment], :method => :delete, data: { confirm: "are you sure?"} %>
+    </div>
+</div>

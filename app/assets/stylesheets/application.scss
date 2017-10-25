@@ -252,6 +252,22 @@ input {
   border: 1px solid red;
 }
 
+.comment-box{
+  height: auto;
+  margin: 10px 5px;
+  padding: 10px 0 0 0;
+  border-radius: 5px;
+  
+  .comment-text{
+    padding-bottom: 50px;
+  }
+  
+  .bottom-row{
+    padding-bottom: 10px;
+  }
+  
+}
+
 .make-comment {
   height: 500px;
   margin-bottom: 50px;

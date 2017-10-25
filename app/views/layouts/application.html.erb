@@ -30,14 +30,18 @@
         	<li>
         	  <% if user_signed_in? %>
              <%= link_to 'LOG OUT', destroy_user_session_path, :method => :delete %>
-
-
-
           <% else %>
-
-          <%= link_to 'LOG IN', new_user_session_path %>
-
+            <%= link_to 'LOG IN', new_user_session_path %>
           <% end %>
+        	</li>
+        	<li>
+        	  <% if user_signed_in? %>
+        	    <% if (current_user.name != '') %>
+        	      <%= link_to current_user.name.upcase, profiles_path %>
+        	   <% else %>
+        	     <%= link_to 'PROFILE', profiles_path %> 
+        	   <% end %>
+        	 <% end %>
         	</li>
         </ul>
 
@@ -52,7 +56,11 @@
 
  
 
-
+  <footer class="footer dark-color">
+      <div class="container">
+        <span class="text-muted">McMovie Voting App. | <a href="https://github.com/dustatron/McMovie">Github</href> </span>
+      </div>
+  </footer>
 
 
 </body>

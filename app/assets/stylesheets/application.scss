@@ -7,6 +7,8 @@
 //   border: 1px solid red;
 // }
 
+
+
 .shorten {
     white-space: nowrap; 
     width: 2em; 
@@ -23,6 +25,11 @@ body {
     color: white;
     background: rgb(12, 12, 12);
     font-family: 'Rubik', sans-serif;
+    min-height: 100%;
+}
+
+.comment-body{
+  color: black;
 }
 
 input {
@@ -243,4 +250,19 @@ input {
 
 .lister {
   border: 1px solid red;
+}
+
+.make-comment {
+  height: 500px;
+  margin-bottom: 50px;
+}
+
+.footer {
+
+  position:fixed;
+  bottom:0;
+  right: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
 }

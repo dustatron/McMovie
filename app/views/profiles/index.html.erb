@@ -1,17 +1,19 @@
-
-<% if user_signed_in? %>
-    <h1>Profile for <%= @user.name %></h1>
-    id : <%= current_user.id%> <br/>
-    Name : <%= current_user.name %> <br/>
-    email : <%= current_user.email %><br/>
-    tagline : <%= current_user.tagline %><br/>
-    bio: <%= current_user.bio %><br/>
+<div class="container">
+    <% if user_signed_in? %>
+        <h1>Profile for <%= @user.name %></h1>
+        id : <%= current_user.id%> <br/>
+        Name : <%= current_user.name %> <br/>
+        email : <%= current_user.email %><br/>
+        tagline : <%= current_user.tagline %><br/>
+        bio: <%= current_user.bio %><br/>
+        
+        <%= link_to "EDIT", edit_profile_path(id: current_user.id)%>
+        
+        <%= link_to "PASSWORD", edit_user_registration_path %>
+        
+    <% else %>
+        <h1>Log In</h1>
+        <%= link_to 'LOG IN', new_user_session_path %>
+    <% end %>
     
-    <%= link_to "EDIT", edit_profile_path(id: current_user.id)%>
-    
-
-<% else %>
-    <h1>Log In</h1>
-    <%= link_to 'LOG IN', new_user_session_path %>
-
-<% end %>
+</div>

@@ -11,7 +11,7 @@
         <div class="thumb-box">
 
         <div class="row images">
-        <%  if (movie.backdrop == 'https://image.tmdb.org/t/p/w185/') %>
+        <%  if (movie.backdrop == 'https://image.tmdb.org/t/p/w185/' || movie.backdrop == '' ) %>
 
             <%= link_to movie do %>
               <%= image_tag("no-poster.jpg", :alt => "rss feed", class: "poster") %>

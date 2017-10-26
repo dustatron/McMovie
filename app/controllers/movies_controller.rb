@@ -68,7 +68,7 @@ class MoviesController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
 
   def upvote
     @movie.upvote_from current_user
@@ -88,6 +88,6 @@ class MoviesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def movie_params
-      params.require(:movie).permit(:title, :image, :body, :trailer)
+      params.require(:movie).permit(:title, :image, :body, :trailer, :imdb, :backdrop, :tagline)
     end
 end

@@ -7,8 +7,14 @@
           <h2>LOG IN </h2>
         </div>
         <div class="row">
+          <% if flash[:alert] %>
+              <div class="alert alert-warning">
+          <%= flash[:alert] %>
+          </div>
+
+          <% end %>
           <div class="col-md-8 col-md-offset-2">
-            
+
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="form-group">
               <%= f.email_field :email, autofocus: true, placeholder: "EMAIL" ,class: "form-control" %>
@@ -34,13 +40,12 @@
           <% end %>
           </div>
         </div>
-  
+
         <%= render "devise/shared/links" %>
 
       </div>
 
     </div>
   </div>
-  
-</div>
 
+</div>

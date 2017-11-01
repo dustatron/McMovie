@@ -12,7 +12,10 @@ class MoviesController < ApplicationController
   # GET /movies/1.json
   def show
     @movie = Movie.find(params[:id])
-    @poster = User.find(@movie.user_id)
+    if @movie.user_id
+     @poster = User.find(@movie.user_id)
+
+    end
     
   end
 

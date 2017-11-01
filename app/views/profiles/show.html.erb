@@ -1,11 +1,38 @@
-Profile Show
+<div class="container show">
+    <div class="row title">
+        <h2><%= @user.name %></h2>
+    </div>
+    <div class="row movie_details to-the-edge">
+    <div class="col-md-3 movie_poster">
+        <% if @user.photo? %>
+            <%= image_tag(@user.photo)%>
+        <% else %>
+            <img src="http://www.radfaces.com/images/avatars/little-pete-wrigley.jpg" class="profile-image"></img>
+        <% end %>
+    </div>
 
-Name : <%= @user.name %><br>
-User #: <%= @user.id %><br>
-Tagline : <%= @user.tagline %><br>
-Bio : <%= @user.bio %>
-<br>
 
-<% if current_user.id == @user.id %>
-    <%= link_to "Edit Profile", edit_profile_path(current_user.id)%>
-<% end %>
+    <div class="col-md-9">
+
+        
+        <h4>Tagline :</h4> 
+        <p><%= @user.tagline %></p>
+        <hr/>
+        <h4>Bio :</h4> 
+        <p><%= @user.bio %></p>
+        
+    </div>
+
+    </div>
+        <div class="row lower_menu">
+        <div class="col-md-4">
+            User Number: <%= @user.id %><br>
+        </div>
+        <div class="col-md-8 text-right">
+            <% if current_user.id == @user.id %>
+                <%= link_to "Edit Profile", edit_profile_path(current_user.id)%>
+            <% end %>
+        </div>
+    
+    </div>
+</div>

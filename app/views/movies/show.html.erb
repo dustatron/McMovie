@@ -23,19 +23,7 @@
 
       </div>
       <div class="col-md-9 movie_body">
-        <div class="well comment-body">
-          Movie ID: <%= @movie.id %> 
-          <br>
-          Posted at: <%= @movie.created_at %>
-          <br>
-          Posted by: <%if @movie.user_name %> 
-                      <%= link_to @movie.user_name, profile_path(@movie.user_id) %>
-                    <% else %>
-                      Unknown
-                    <%end%>
-
-        </div>
-
+       
         <%= @movie.body %> 
         <hr>
         Run Time : <%= @movie.runtime %> minutes 
@@ -53,15 +41,26 @@
 
         <%= link_to 'IMDB Link', "https://www.imdb.com/title/#{@movie.imdb}", target: :_blank %>
         <br>
-        Posted by...
+
       </div>
 
   </div>
 
   <div class="row lower_menu">
-    <%= link_to 'Edit', edit_movie_path(@movie) %> |
-    <%= link_to 'Back', movies_path %> |
-    <%= link_to 'Delete', movie_path, :confirm => "are you sure?", :method => :delete %>
+    <div class="col-md-4">
+        Posted by:
+        <%if @poster.present? %>
+         <strong> <%= link_to @poster.name, profile_path(@poster.id) %>  " <%= @poster.tagline %> "</strong>
+        <% else %>
+          Unknown
+        <% end %>          
+    </div>
+    <div class="col-md-8 text-right">
+      <%= link_to 'Edit', edit_movie_path(@movie) %> |
+      <%= link_to 'Back', movies_path %> |
+      <%= link_to 'Delete', movie_path, :confirm => "are you sure?", :method => :delete %>      
+    </div>
+
   </div>
 
 </div>

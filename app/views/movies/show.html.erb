@@ -23,8 +23,23 @@
 
       </div>
       <div class="col-md-9 movie_body">
-        <%= @movie.body %> <hr>
-        Run Time : <%= @movie.runtime %> minutes <br>
+        <div class="well comment-body">
+          Movie ID: <%= @movie.id %> 
+          <br>
+          Posted at: <%= @movie.created_at %>
+          <br>
+          Posted by: <%if @movie.user_name %> 
+                      <%= link_to @movie.user_name, profiles_path(@movie.user_id) %>
+                    <% else %>
+                      Unknown
+                    <%end%>
+
+        </div>
+
+        <%= @movie.body %> 
+        <hr>
+        Run Time : <%= @movie.runtime %> minutes 
+        <br>
 
         Budget &nbsp;: <%= number_with_delimiter(@movie.budget, :delimiter => ',') %> <br>
         Revenue: <%= number_with_delimiter(@movie.revenue, :delimiter => ',' ) %> <br>
@@ -37,7 +52,10 @@
         <br>
 
         <%= link_to 'IMDB Link', "https://www.imdb.com/title/#{@movie.imdb}", target: :_blank %>
+        <br>
+        Posted by...
       </div>
+
   </div>
 
   <div class="row lower_menu">

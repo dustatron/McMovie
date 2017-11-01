@@ -1,0 +1,11 @@
+Profile Show
+
+Name : <%= @user.name %><br>
+User #: <%= @user.id %><br>
+Tagline : <%= @user.tagline %><br>
+Bio : <%= @user.bio %>
+<br>
+
+<% if current_user.id == @user.id %>
+    <%= link_to "Edit Profile", edit_profile_path(current_user.id)%>
+<% end %>

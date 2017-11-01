@@ -18,6 +18,7 @@ class MoviesController < ApplicationController
   def new
     searches = Search.for(params[:q])
     @results = Results.new(searches)
+    @user = User.find(current_user)
   end
 
 
@@ -29,10 +30,11 @@ class MoviesController < ApplicationController
   # POST /movies.json
 
   def create
-
+    @user = current_user
     details = Details.for(params[:movie]['id'])
-    grabThe = Grabs.new(details)
+    grabThe = Grabs.new(details, @user)
     @movie = grabThe.movie
+
 
     respond_to do |format|
       if @movie.save
@@ -88,6 +90,6 @@ class MoviesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def movie_params
-      params.require(:movie).permit(:title, :image, :body, :trailer)
+      params.require(:movie).permit(:title, :image, :body, :trailer, :user_id, :user_name)
     end
 end

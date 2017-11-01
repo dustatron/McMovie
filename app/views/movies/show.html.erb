@@ -29,7 +29,7 @@
           Posted at: <%= @movie.created_at %>
           <br>
           Posted by: <%if @movie.user_name %> 
-                      <%= link_to @movie.user_name, profiles_path(@movie.user_id) %>
+                      <%= link_to @movie.user_name, profile_path(@movie.user_id) %>
                     <% else %>
                       Unknown
                     <%end%>
@@ -71,13 +71,13 @@
   <div class="col-md-10 col-md-offset-1 col-xs-12">
 
     <h2 class="text-center"><%= @movie.comments.count %> Comments </h2>
-    <%= render @movie.comments %>
-  </div>
 
+  </div>
+  <%= render @movie.comments %>
 
 </div>
 
   <div class="container center-me">
-     <%= render "comments/form" %>
+  <%= render "comments/form" %>
 
   </div>

@@ -1,7 +1,8 @@
 class Grabs
 
-    def initialize title
+    def initialize title, user
         @title = title
+        @user = user
     end
     
     def movie
@@ -25,6 +26,8 @@ class Grabs
             revenue: @title['revenue'],
             runtime: @title['runtime'],
             tagline: @title['tagline'],
+            user_id: @user.id,
+            user_name: @user.name,
         })
 
         

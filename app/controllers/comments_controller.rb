@@ -1,10 +1,18 @@
 class CommentsController < ApplicationController
+
     
     def create
-        @movie = Movie.find(params[:movie_id])
-        @comment = @movie.comments.create(params[:comment].permit(:user, :body))
-       # @comment = params.require(:comments).permit(:commenter, :body)
-        redirect_to movie_path(@movie)
+       @movie = Movie.find(params[:movie_id])
+       @user = current_user
+       @comment = @movie.comments.create(comment_params)
+       redirect_to movie_path(@movie)
+    #   @comment = Comment.new(comment_params)
+        
+    #     if @comment.create
+    #         redirect_to movie_path(@movie)
+    #     else
+    #         render action: :new
+    #     end
     end
     
    def destroy
@@ -13,5 +21,11 @@ class CommentsController < ApplicationController
        @comment.destroy
        redirect_to movie_path(@movie)
    end
+   
+   private
+   
+    def comment_params
+        params.require(:comment).permit(:user, :body)
+    end
     
 end
